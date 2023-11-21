@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :pets, through: :bookings
+  has_many :bookings
+  has_many :pets
   has_one_attached :photo
 
   # Include default devise modules. Others available are:

@@ -1,0 +1,30 @@
+<h1 class="mb-5">Welcome <%= current_user.first_name %></h1>
+
+<h2>My Pets</h2>
+<% if current_user.pets.any? %>
+  <div class="d-flex flex-wrap gap-4 m-3 mb-5">
+    <% current_user.pets.each do |pet| %>
+      <div class="card p-2 shadow" style="width: 200px"> <%# TODO replace this div with _pet partial once it's done  %>
+        <h3><%= link_to pet.name, pet  %></h3>
+        <p><%= pet.price %>€</p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>You have no pets yet.</p>
+<% end %>
+
+<h2>My Bookings</h2>
+<% if current_user.bookings.any? %>
+  <div class="d-flex flex-column">
+    <% current_user.bookings.each do |pet| %>
+      <div class="card m-4 p-2 shadow" style="width: 200px">
+        <h3>
+          <%= booking.pet %>
+        </h3>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>You have no bookings yet.</p>
+<% end %>
