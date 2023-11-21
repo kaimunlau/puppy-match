@@ -1,8 +1,5 @@
-
 <div>
   <h2><Strong><%= @pet.name %></Strong></h2>
   <p><%= @pet.price %>€</p>
   <%= link_to "Go back to list", pets_path(@pet)%>
 </div>
-
-<% flash.alert = "Here is the cutie!" %>
