@@ -1,5 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :pet
-  has_one :booking
+  belongs_to :booking
   has_one :user, through: :booking
 end

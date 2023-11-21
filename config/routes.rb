@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "pets#index"
 
   resources :pets, only: %i[index show] do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create] do
+      resources :reviews, only: %i[new create]
+    end
   end
   resources :bookings, only: %i[destroy]
 
