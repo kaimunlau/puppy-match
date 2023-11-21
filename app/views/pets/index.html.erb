@@ -2,7 +2,7 @@
 
 <div id="pets">
   <% @pets.each do |pet| %>
-    <%= render "pet" %>
+    <%= render partial: "pet", locals: {pet: pet} %>
     <p>
      <%= link_to "Show this cutie", pet %>
     </p>
