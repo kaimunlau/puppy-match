@@ -43,3 +43,6 @@
 
 # Ignore Gemfile.lock | remember to "bundle install"!
 Gemfile.lock
+
+#ignore schema
+db/schema.rb
