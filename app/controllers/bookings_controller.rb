@@ -8,8 +8,10 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.pet = @pet
+    @booking.user = current_user
     if @booking.save
-      redirect_to pet_path(@pet)
+      flash.alert = "Your reservation is pending! Wait for owner to confirm :)"
+      redirect_to :root
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,6 +24,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :pets_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
