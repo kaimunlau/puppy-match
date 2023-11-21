@@ -6,7 +6,7 @@
     <% current_user.pets.each do |pet| %>
     <div class="card p-2" style="width: 200px">
       <h3>
-        <%= pet.name %>
+        <%= link_to pet.name, pet  %>
       </h3>
       <p>
         <%= pet.price %>€
