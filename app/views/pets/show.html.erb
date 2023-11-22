@@ -16,8 +16,8 @@
       <% end %>
       <%= render "detailed_card" do %>
       <div class="d-flex justify-content-around">
-        <%= link_to "Go back to list", pets_path(@pet) %>
-        <%= link_to 'Book me!', 'toto' %>
+        <%= link_to "Go back to list", pets_path(@pet), class: "btn btn-outline-secondary" %>
+        <%= link_to 'Book me!', 'toto', class: "btn btn-primary" %>
       </div>
       <% end %>
     </div>
