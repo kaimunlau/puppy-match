@@ -26,10 +26,17 @@ user2 = User.create!(
 puts "Renter created, email is #{user2.email}, pw is #{user2.password}!"
 
 puts "Creating pets..."
-2.times do
-  file = URI.open("https://media.4-paws.org/1/e/d/6/1ed6da75afe37d82757142dc7c6633a532f53a7d/VIER%20PFOTEN_2019-03-15_001-2886x1999-1920x1330.jpg")
+img_urls = [
+  "https://media.4-paws.org/1/e/d/6/1ed6da75afe37d82757142dc7c6633a532f53a7d/VIER%20PFOTEN_2019-03-15_001-2886x1999-1920x1330.jpg",
+  "https://www.petlandflorida.com/wp-content/uploads/2022/04/shutterstock_1290320698-1-scaled.jpg",
+  "https://images.ctfassets.net/sfnkq8lmu5d7/4Ma58uke8SXDQLWYefWiIt/3f1945422ea07ea6520c7aae39180101/2021-11-24_Singleton_Puppy_Syndrome_One_Puppy_Litter.jpg?w=1000&h=750&fl=progressive&q=70&fm=jpg",
+  "https://www.geniuspetfood.co.nz/cdn/shop/articles/Dog_food_for_puppies.jpg?v=1685817287",
+  "https://cdn.royalcanin-weshare-online.io/UCImMmgBaxEApS7LuQnZ/v2/eukanuba-market-image-puppy-beagle?w=5596&h=2317&rect=574,77,1850,1045&auto=compress,enhance"
+]
+20.times do
+  file = URI.open(img_urls.sample)
   pet = Pet.new(
-    name: Faker::Creature::Dog.name,
+    name: Faker::GreekPhilosophers.unique.name,
     species: "Dog",
     user_id: user1.id,
     price: rand(10..100))
