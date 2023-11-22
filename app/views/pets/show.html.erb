@@ -12,7 +12,12 @@
             <p>blabla Location: City, Country</p>
             <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
             <p><%= @pet.price %>€ par jour</p>
+            <%= link_to booking_path do %>
+             <button class="btn btn-default" name="button"> Book !</button>
+             <% end %>
             <%= link_to "Go back to list", pets_path(@pet)%>
+            <%= link_to 'Book!', 'toto' %>
+            <%# #replace path with actual path %>
             <!-- Add more pets details as needed -->
         </div>
     </div>
