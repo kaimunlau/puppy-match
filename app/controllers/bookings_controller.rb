@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       flash.alert = "Your reservation is pending! Wait for owner to confirm :)"
-      redirect_to :root
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end

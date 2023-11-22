@@ -42,7 +42,7 @@
 .DS_Store
 
 # Ignore Gemfile.lock | remember to "bundle install"!
-Gemfile.lock
+# Gemfile.lock
 
 #ignore schema
-/db/schema.rb
+*schema.rb

@@ -1,6 +1,13 @@
 class PetsController < ApplicationController
   def index
     @pets = Pet.all
+    @markers = @pets.map do |pet|
+      {
+        lat: pet.user.latitude,
+        lng: pet.user.longitude,
+        marker_html: render_to_string(partial: "map_marker")
+      }
+    end
   end
 
   def show
