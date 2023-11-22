@@ -9,7 +9,7 @@
 <div class="d-flex flex-wrap gap-4 flex-grow" id="pets">
   <% @pets.each do |pet| %>
     <%= link_to render(
-      partial: "pet", locals: {pet: pet}
+      partial: "shared/pet", locals: { pet: pet }
     ), pet %>
   <% end %>
 </div>
