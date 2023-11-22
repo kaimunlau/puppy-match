@@ -3,3 +3,11 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+
+.mapboxgl-map {
+  overflow: unset !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10;
+}
