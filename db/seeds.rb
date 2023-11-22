@@ -4,25 +4,48 @@ Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
 
-puts "Creating a user..."
-user1 = User.create!(
+puts "Creating owners..."
+owner1 = User.create!(
   email: "test@test.com",
   password: "123456",
   first_name: "John",
   last_name: "Doe",
-  address: "1 rue de la paix",
-  zipcode: "75000",
-  city: "Paris")
-puts "User created, email is #{user1.email}, pw is #{user1.password}!"
+  address: "20 rue des capucins",
+  zipcode: "69001",
+  city: "Lyon")
+puts "User created, email is #{owner1.email}, pw is #{owner1.password}!"
 
+owner2 = User.create!(
+  email: "owner@test.com",
+  password: "123456",
+  first_name: "Toto",
+  last_name: "Doe",
+  address: "1 boulevard des belges",
+  zipcode: "69006",
+  city: "Lyon")
+puts "User created, email is #{owner2.email}, pw is #{owner2.password}!"
+
+owner3 = User.create!(
+  email: "owner2@test.com",
+  password: "123456",
+  first_name: "Tata",
+  last_name: "Doe",
+  address: "26 rue mansard",
+  zipcode: "69100",
+  city: "villeurbanne")
+puts "User created, email is #{owner3.email}, pw is #{owner3.password}!"
+
+owners = [owner1, owner2, owner3]
+
+puts "Creating a renter..."
 user2 = User.create!(
   email: "client@test.com",
   password: "123456",
   first_name: "Amy",
   last_name: "Wheeler",
-  address: "175 Rue Saint-Denis",
-  zipcode: "75002",
-  city: "Paris")
+  address: "22 rue des capucins",
+  zipcode: "69001",
+  city: "Lyon")
 puts "Renter created, email is #{user2.email}, pw is #{user2.password}!"
 
 puts "Creating pets..."
@@ -38,7 +61,7 @@ img_urls = [
   pet = Pet.new(
     name: Faker::GreekPhilosophers.unique.name,
     species: "Dog",
-    user_id: user1.id,
+    user_id: owners.sample.id,
     price: rand(10..100))
   pet.photo.attach(io: file, filename: "puppy.jpg", content_type: "image/jpg")
   pet.save!
