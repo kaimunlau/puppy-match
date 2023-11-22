@@ -17,7 +17,7 @@ puts "User created, email is #{user1.email}, pw is #{user1.password}!"
 
 user2 = User.create!(
   email: "client@test.com",
-  password: "654321",
+  password: "123456",
   first_name: "Amy",
   last_name: "Wheeler",
   address: "175 Rue Saint-Denis",
