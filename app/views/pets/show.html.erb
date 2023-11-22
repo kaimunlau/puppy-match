@@ -1,5 +1,20 @@
-<div>
-  <h2><Strong><%= @pet.name %></Strong></h2>
-  <p><%= @pet.price %>€</p>
-  <%= link_to "Go back to list", pets_path(@pet)%>
+<div class="container mt-4">
+    <!-- Pet Details -->
+  <div class="row">
+    <div class="col-md-8">
+      <div class="w-75">
+        <img src="https://media.istockphoto.com/id/1028200574/fr/photo/chien-de-yorkshire-miniature-laide-%C3%A0-la-recherche-dappareil-photo.jpg?s=1024x1024&w=is&k=20&c=pDKZoUmXZjEweBCdrVnoyv6q_f7ZYhhksKybDgEKKzo=" alt="picture of <%= @pet.name %>" class="image">
+      </div>
+    </div>
+    <div class="col-md-4 glass">
+      <h1><Strong><%= @pet.name %></Strong></h1>
+      <p>blabla Location: City, Country</p>
+      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+      <p><%= @pet.price %>€ par jour</p>
+      <%= link_to "Go back to list", pets_path(@pet)%>
+      <%= link_to 'Book!', 'toto' %>
+      <%# #replace path with actual path %>
+      <!-- Add more pets details as needed -->
+    </div>
+  </div>
 </div>
