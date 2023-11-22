@@ -20,14 +20,7 @@
 <% if current_user.bookings.any? %>
   <div class="d-flex flex-column">
     <% current_user.bookings.each do |booking| %>
-      <div class="card m-4 p-2 shadow" style="width: 200px">
-        <h3>
-          <%= booking.pet.name %>
-            <p>Owner's answer: <em><%= booking.status %></em></p>
-            <p>Booked on: <%= booking.start_date %></p>
-            <p>Until: <%= booking.end_date %></p>
-        </h3>
-      </div>
+      <%= render partial: "booking", locals: {booking: booking} %>
     <% end %>
   </div>
 <% else %>
