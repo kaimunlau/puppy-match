@@ -12,14 +12,7 @@
 @import "pages/index";
 
 .glass {
-  background: radial-gradient(to right,
-    rgba(255, 0, 0, 0.4),
-    rgba(255, 153, 0, 0.4),
-    rgba(255, 255, 0, 0.4),
-    rgba(51, 204, 51, 0.4),
-    rgba(51, 153, 255, 0.4),
-    rgba(102, 51, 204, 0.4)
-  );
+  background: linear-gradient(283deg, rgba(246,189,96,1) 21%, rgba(242,132,130,1) 54%);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 13.5px );
   -webkit-backdrop-filter: blur( 18px );
