@@ -1,7 +1,7 @@
 <h2>Our pets</h2>
 
 
-<div class="d-flex flex-wrap gap-2" id="pets">
+<div class="d-flex flex-wrap gap-4" id="pets">
   <% @pets.each do |pet| %>
     <%= link_to render(
       partial: "pet", locals: {pet: pet}
