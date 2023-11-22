@@ -7,6 +7,7 @@
     <div class="col-4 d-flex flex-column align-items-start gap-4">
       <%= render "detailed_card" do %>
         <h1>Hey coucou, I'm <strong><%= @pet.name %></strong></h1>
+        <br>
         <p>J'habite à <%= @pet.user.city %>, <%= @pet.user.zipcode %></p>
       <% end %>
       <%= render "detailed_card" do %>
@@ -14,9 +15,9 @@
         <p>Booke moi pour <strong><%= @pet.price %>€ </strong>par jour</p>
       <% end %>
       <%= render "detailed_card" do %>
-      <div class="d-flex justify-content-between">
-        <%= link_to 'Book!', 'toto' %>
+      <div class="d-flex justify-content-around">
         <%= link_to "Go back to list", pets_path(@pet) %>
+        <%= link_to 'Book me!', 'toto' %>
       </div>
       <% end %>
     </div>
