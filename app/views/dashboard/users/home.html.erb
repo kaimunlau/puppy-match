@@ -21,10 +21,6 @@
   <div class="d-flex">
     <% current_user.bookings.each do |booking| %>
       <%= render partial: "shared/pet", locals: { pet: booking.pet } %>
-        <%# <p>Booking <em><%= booking.status</em></p>  %>
-        <%# <p>Booked on: <%= booking.start_date</p>  %>
-        <%# <p>Until: <%= booking.end_date</p>  %>
-      <%# <% end %>
     <% end %>
   </div>
 <% else %>
