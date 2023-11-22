@@ -27,11 +27,14 @@ puts "Renter created, email is #{user2.email}, pw is #{user2.password}!"
 
 puts "Creating pets..."
 2.times do
-  pet = Pet.create!(
+  file = URI.open("https://media.4-paws.org/1/e/d/6/1ed6da75afe37d82757142dc7c6633a532f53a7d/VIER%20PFOTEN_2019-03-15_001-2886x1999-1920x1330.jpg")
+  pet = Pet.new(
     name: Faker::Creature::Dog.name,
     species: "Dog",
     user_id: user1.id,
     price: rand(10..100))
+  pet.photo.attach(io: file, filename: "puppy.jpg", content_type: "image/jpg")
+  pet.save!
   puts "Pet created, name is #{pet.name}!"
 end
 
