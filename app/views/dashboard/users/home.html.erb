@@ -1,5 +1,7 @@
 <h1 class="mb-5">Welcome <%= current_user.first_name %></h1>
 
+<%= link_to "Add a new pet", new_pet_path, class: "btn btn-primary" %>
+
 <h2>My Pets</h2>
 <% if current_user.pets.any? %>
   <div class="d-flex flex-wrap gap-4 m-3 mb-5">
