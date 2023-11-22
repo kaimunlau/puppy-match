@@ -45,4 +45,4 @@
 Gemfile.lock
 
 #ignore schema
-/db/schema.rb
+*schema.rb

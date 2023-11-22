@@ -21,7 +21,7 @@ user2 = User.create!(
   first_name: "Amy",
   last_name: "Wheeler",
   address: "175 Rue Saint-Denis",
-  zipcode: "75000",
+  zipcode: "75002",
   city: "Paris")
 puts "Renter created, email is #{user2.email}, pw is #{user2.password}!"
 
