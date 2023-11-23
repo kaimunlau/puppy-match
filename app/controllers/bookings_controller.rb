@@ -7,7 +7,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    dates = params[:booking][:start_date].split(" to ")
+    start_date = dates.first
+    end_date = dates.last
+    @booking = Booking.new(start_date: start_date, end_date: end_date)
     @booking.pet = @pet
     @booking.user = current_user
     if @booking.save
