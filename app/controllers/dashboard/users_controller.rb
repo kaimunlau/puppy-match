@@ -14,7 +14,7 @@ module Dashboard
     def make_my_pet_bookings(pets)
       pets.map do |pet|
         {
-          pet: pet,
+          pet:,
           booking: pet.bookings.first,
           total_price: pet.price * (pet.bookings.first.end_date - pet.bookings.first.start_date).to_i
         }
@@ -24,7 +24,7 @@ module Dashboard
     def make_my_bookings(bookings)
       bookings.map do |booking|
         {
-          booking: booking,
+          booking:,
           pet: booking.pet,
           total_price: booking.pet.price * (booking.end_date - booking.start_date).to_i
         }
