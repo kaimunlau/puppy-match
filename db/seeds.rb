@@ -62,6 +62,7 @@ img_urls = [
     name: Faker::GreekPhilosophers.unique.name,
     species: "Dog",
     user_id: owners.sample.id,
+    description: Faker::ChuckNorris.fact,
     price: rand(10..100))
   pet.photo.attach(io: file, filename: "puppy.jpg", content_type: "image/jpg")
   pet.save!
