@@ -18,7 +18,7 @@
         <div>
             <h4><strong><%= @pet.price %>€ </strong>par jour</h4>
         </div>
-        <div>
+        <div data-controller="price">
           <%= simple_form_for [@pet, Booking.new] do |f| %>
             <%= f.input :start_date, label: 'Sélectionne tes dates !',
                 as: :string,
