@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :reviews, only: %i[new create]
     end
   end
-  resources :bookings, only: %i[destroy]
+  resources :bookings, only: %i[destroy update]
 
   namespace :dashboard do
     get "/", to: "users#home"
