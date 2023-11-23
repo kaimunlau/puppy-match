@@ -1,4 +1,4 @@
-<div class="border p-4 rounded">
+<div class="border p-2 rounded shadow">
   <%= render partial: "shared/pet", locals: { pet: booking[:pet] } %>
   <p><%= booking[:booking][:start_date].strftime('%d %b \'%y') %> - <%= booking[:booking][:end_date].strftime('%d %b \'%y') %></p>
   <p>Total: <%= booking[:total_price] %>€</p>

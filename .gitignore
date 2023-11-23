@@ -46,3 +46,5 @@
 
 #ignore schema
 *schema.rb
+
+.byebug_history
