@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pets#index"
 
-  resources :pets, only: %i[index show new create] do
+  resources :pets do
     resources :bookings, only: %i[new create] do
       resources :reviews, only: %i[new create]
     end

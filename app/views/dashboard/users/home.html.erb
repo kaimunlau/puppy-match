@@ -9,6 +9,12 @@
       <div class="card p-2 shadow" style="width: 200px"> <%# TODO replace this div with _pet partial once it's done  %>
         <h3><%= link_to pet.name, pet  %></h3>
         <p><%= pet.price %>€</p>
+        <div class="d-flex justify-content-between">
+          <%= link_to content_tag(:i, '', class: 'fas fa-edit'), edit_pet_path(pet) %>
+          <%= link_to content_tag(:i,'',class: 'fas fa-trash-can'), pet_path(pet),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+            %>
+        </div>
       </div>
     <% end %>
   </div>
