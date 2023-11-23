@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: %i[edit update destroy]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @pets = Pet.all
@@ -59,6 +60,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :price, :photo)
+    params.require(:pet).permit(:name, :species, :price, :photo, :description)
   end
 end

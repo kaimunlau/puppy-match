@@ -6,8 +6,12 @@
       <%= render "detailed_card" do %>
         <h1>Hey coucou, I'm <strong><%= @pet.name %></strong></h1>
         <br>
-        <p>J'habite à <%= @pet.user.city %>, <%= @pet.user.zipcode %> 🏠</p>
+        <p><strong>J'habite à </strong>:</p>
+        <p>🏠 <%= @pet.user.city.capitalize %>, <%= @pet.user.zipcode %></p>
         <p>et je vais booster ton potentiel de séduction 💘 </p>
+        <p><strong>Qui-suis-je ?</strong></p>
+        <p><%= @pet.description %></p>
+        <p><strong>J'appartiens à </strong>: <%= @pet.user.first_name %> 🫶</p>
       <% end %>
       <%= render "detailed_card" do %>
         <h4><strong><%= @pet.price %>€ </strong>par jour</h4>
