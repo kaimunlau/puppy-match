@@ -1,0 +1,9 @@
+  <%= simple_form_for @pet do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.input :species %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Youpi !", class: "btn btn-primary" %>
+    </div>
+  <% end %>
