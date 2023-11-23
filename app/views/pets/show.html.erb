@@ -10,29 +10,24 @@
         <p><strong>J'habite à :</strong></p>
         <h4>🏠 <%= @pet.user.city.capitalize %>, <%= @pet.user.zipcode %></h4>
         <p>et je vais booster ton potentiel de séduction 💘</p>
-        <br>
-        <p><strong>J'habite à </strong>:</p>
-        <p>🏠 <%= @pet.user.city.capitalize %>, <%= @pet.user.zipcode %></p>
-        <p>et je vais booster ton potentiel de séduction 💘 </p>
         <p><strong>Qui-suis-je ?</strong></p>
         <p><%= @pet.description %></p>
         <p><strong>J'appartiens à </strong>: <%= @pet.user.first_name %> 🫶</p>
       <% end %>
       <%= render "detailed_card" do %>
-    <div class="">
-        <h4><strong><%= @pet.price %>€ </strong>par jour</h4>
-    </div>
-    <div>
-        <p></p>
-        <%= simple_form_for [@pet, Booking.new] do |f| %>
-          <%= f.input :start_date, label: 'Sélectionne tes dates !',
-              as: :string,
-              input_html: { data: { controller: "datepicker" } } %>
-          <div class="form-actions">
-          <%= f.submit "Book !", class: "btn btn-primary"%>
-          </div>
-        <% end %>
-    </div>
+        <div>
+            <h4><strong><%= @pet.price %>€ </strong>par jour</h4>
+        </div>
+        <div>
+          <%= simple_form_for [@pet, Booking.new] do |f| %>
+            <%= f.input :start_date, label: 'Sélectionne tes dates !',
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+            <div class="form-actions">
+              <%= f.submit "Book !", class: "btn btn-primary"%>
+            </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
