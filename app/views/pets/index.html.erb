@@ -1,15 +1,20 @@
+<div class="d-flex">
+  <div>
+    <h2>Our pets</h2>
 
-<div style="width: 100%; height: 300px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="row" id="pets">
+      <% @pets.each do |pet| %>
+        <div class="col-6">
+          <%= link_to render(
+            partial: "shared/pet", locals: { pet: pet }
+          ), pet %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<h2>Our pets</h2>
-
-<div class="d-flex flex-wrap gap-4 flex-grow" id="pets">
-  <% @pets.each do |pet| %>
-    <%= link_to render(
-      partial: "pet", locals: {pet: pet}
-    ), pet %>
-  <% end %>
+  <div style="min-width: 500px; height: 100vh;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
