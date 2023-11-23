@@ -19,8 +19,8 @@
 <h2>My Bookings</h2>
 <% if current_user.bookings.any? %>
   <div class="d-flex">
-    <% current_user.bookings.each do |booking| %>
-      <%= render partial: "shared/pet", locals: { pet: booking.pet } %>
+    <% @my_bookings.each do |booking| %>
+      <%= render partial: "booking", locals: { booking: booking } %>
     <% end %>
   </div>
 <% else %>
@@ -28,14 +28,11 @@
 <% end %>
 
 <% if current_user.pets.any? %>
-  <% if @bookings.any? %>
+  <% if @my_pet_bookings.any? %>
     <h2>My Pet Bookings</h2>
     <div class="d-flex">
-      <% @bookings.each do |booking| %>
-      <div class="border p-4">
-        <%= render partial: "shared/pet", locals: { pet: booking[:pet] } %>
+      <% @my_pet_bookings.each do |booking| %>
         <%= render partial: "booking", locals: { booking: booking } %>
-      </div>
       <% end %>
     </div>
   <% else %>
