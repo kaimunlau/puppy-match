@@ -1,0 +1,12 @@
+<div class="border p-2 rounded shadow">
+  <%= render partial: "shared/pet", locals: { pet: booking[:pet] } %>
+  <p><%= booking[:booking][:start_date].strftime('%d %b \'%y') %> - <%= booking[:booking][:end_date].strftime('%d %b \'%y') %></p>
+  <p>Total: <%= booking[:total_price] %>€</p>
+  <p>Status: <%= booking[:booking].status %></p>
+  <% if booking[:booking].pet.user == current_user %>
+    <div class="d-flex justify-content-between">
+      <%= link_to "Confirm", 'toto', class: "btn btn-primary" %>
+      <%= link_to "Decline", 'toto', class: "btn btn-warning" %>
+    </div>
+  <% end %>
+</div>
