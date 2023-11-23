@@ -18,13 +18,14 @@
         <div>
             <h4><strong><%= @pet.price %>€ </strong>par jour</h4>
         </div>
-        <div>
+        <div data-controller="price" data-price-price-value="<%= @pet.price %>">
           <%= simple_form_for [@pet, Booking.new] do |f| %>
             <%= f.input :start_date, label: 'Sélectionne tes dates !',
                 as: :string,
-                input_html: { data: { controller: "datepicker" } } %>
-            <div class="form-actions">
-              <%= f.submit "Book !", class: "btn btn-primary"%>
+                input_html: { data: { controller: "datepicker", action: "change->price#handleDateChange" } } %>
+            <div class="form-actions d-flex justify-content-between align-items-baseline">
+              <%= f.submit "Book !", class: "btn btn-primary disabled", data: { price_target: "btn" } %>
+              <h4 data-price-target="total" class="me-4"></h4>
             </div>
           <% end %>
         </div>
