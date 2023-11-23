@@ -7,10 +7,10 @@
         <h1>Hey coucou, I'm <strong><%= @pet.name %></strong></h1>
         <br>
         <p>J'habite à <%= @pet.user.city %>, <%= @pet.user.zipcode %> 🏠</p>
+        <p>et je vais booster ton potentiel de séduction 💘 </p>
       <% end %>
       <%= render "detailed_card" do %>
-        <p>Je vais booster ton potentiel de séduction 💘 </p>
-        <p>Booke moi pour <strong><%= @pet.price %>€ </strong>par jour</p>
+        <h4><strong><%= @pet.price %>€ </strong>par jour</h4>
       <% end %>
       <%= render "detailed_card" do %>
       <div class="d-flex justify-content-around">
