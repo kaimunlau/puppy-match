@@ -38,15 +38,15 @@ puts "User created, email is #{owner3.email}, pw is #{owner3.password}!"
 owners = [owner1, owner2, owner3]
 
 puts "Creating a renter..."
-user2 = User.create!(
+client = User.create!(
   email: "client@test.com",
   password: "123456",
   first_name: "Amy",
   last_name: "Wheeler",
-  address: "22 rue des capucins",
+  address: "26 rue des capucins",
   zipcode: "69001",
   city: "Lyon")
-puts "Renter created, email is #{user2.email}, pw is #{user2.password}!"
+puts "Renter created, email is #{client.email}, pw is #{client.password}!"
 
 puts "Creating pets..."
 img_urls = [
@@ -68,5 +68,13 @@ img_urls = [
   pet.save!
   puts "Pet created, name is #{pet.name}!"
 end
+
+puts "Creating bookings..."
+Booking.create!(
+  user_id: client.id,
+  pet_id: owner1.pets.sample.id,
+  start_date: Date.today + 1,
+  end_date: Date.today + 3,
+  status: "pending")
 
 puts "Done!"
