@@ -1,0 +1,7 @@
+<p><%= booking[:booking][:start_date].strftime('%d %b \'%y') %> - <%= booking[:booking][:end_date].strftime('%d %b \'%y') %></p>
+<p>Total: <%= booking[:total_price] %>€</p>
+<p>Status: <%= booking[:booking].status %></p>
+<div class="d-flex justify-content-between">
+  <%= link_to "Confirm", 'toto', class: "btn btn-primary" %>
+  <%= link_to "Decline", 'toto', class: "btn btn-warning" %>
+</div>

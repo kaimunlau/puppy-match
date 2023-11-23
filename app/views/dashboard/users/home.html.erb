@@ -26,3 +26,19 @@
 <% else %>
   <p>You have no bookings yet.</p>
 <% end %>
+
+<% if current_user.pets.any? %>
+  <% if @bookings.any? %>
+    <h2>My Pet Bookings</h2>
+    <div class="d-flex">
+      <% @bookings.each do |booking| %>
+      <div class="border p-4">
+        <%= render partial: "shared/pet", locals: { pet: booking[:pet] } %>
+        <%= render partial: "booking", locals: { booking: booking } %>
+      </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No one has booked your pets yet.</p>
+  <% end %>
+<% end %>
