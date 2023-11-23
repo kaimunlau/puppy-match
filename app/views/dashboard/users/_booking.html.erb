@@ -1,12 +1,12 @@
-<div class="border p-2 rounded shadow">
+<div data-controller="booking-confirmation" data-booking-confirmation-booking-value="<%= booking[:booking].id %>" class="border p-2 rounded shadow">
   <%= render partial: "shared/pet", locals: { pet: booking[:pet] } %>
   <p><%= booking[:booking][:start_date].strftime('%d %b \'%y') %> - <%= booking[:booking][:end_date].strftime('%d %b \'%y') %></p>
   <p>Total: <%= booking[:total_price] %>€</p>
-  <p>Status: <%= booking[:booking].status %></p>
-  <% if booking[:booking].pet.user == current_user %>
-    <div class="d-flex justify-content-between">
-      <%= link_to "Confirm", 'toto', class: "btn btn-primary" %>
-      <%= link_to "Decline", 'toto', class: "btn btn-warning" %>
+  <p data-booking-confirmation-target="status">Status: <%= booking[:booking].status %></p>
+  <% if booking[:booking].pet.user == current_user && booking[:booking].status == "pending" %>
+    <div data-booking-confirmation-target="btns" class="d-flex justify-content-between">
+      <button data-action="click->booking-confirmation#confirm" data-status="confirmed" class="btn btn-primary">Confirm</button>
+      <button data-action="click->booking-confirmation#confirm" data-status="rejected" class="btn btn-warning">Decline</button>
     </div>
   <% end %>
 </div>
