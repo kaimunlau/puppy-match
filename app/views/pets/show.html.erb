@@ -1,23 +1,20 @@
 <div class="container mt-4">
     <!-- Pet Details -->
-  <div class="row d-flex">
-    <div class="col-8">
-      <%= cl_image_tag @pet.photo.key, height: 700, crop: :fill, class: "rounded" %>
-    </div>
-    <div class="col-4 d-flex flex-column align-items-start gap-4">
+  <div class="d-flex gap-4 ">
+    <%= cl_image_tag @pet.photo.key, width: 700, crop: :fill, class: "rounded" %>
+    <div class="d-flex flex-column justify-content-between gap-4">
       <%= render "detailed_card" do %>
         <h1>Hey coucou, I'm <strong><%= @pet.name %></strong></h1>
         <br>
-        <p>J'habite à <%= @pet.user.city %>, <%= @pet.user.zipcode %></p>
+        <p>J'habite à <%= @pet.user.city %>, <%= @pet.user.zipcode %> 🏠</p>
+        <p>et je vais booster ton potentiel de séduction 💘 </p>
       <% end %>
       <%= render "detailed_card" do %>
-        <p>Je vais booster ton potentiel de séduction 💘 </p>
-        <p>Booke moi pour <strong><%= @pet.price %>€ </strong>par jour</p>
+        <h4><strong><%= @pet.price %>€ </strong>par jour</h4>
       <% end %>
       <%= render "detailed_card" do %>
       <div class="d-flex justify-content-around">
-        <%= link_to "Go back to list", pets_path(@pet), class: "btn btn-outline-secondary" %>
-        <%= link_to 'Book me!', new_pet_booking_path(@pet), class: "btn btn-primary" %>
+        <%= link_to 'Book me!', 'toto', class: "btn btn-primary" %>
       </div>
       <% end %>
     </div>
