@@ -11,8 +11,12 @@
         <h4>🏠 <%= @pet.user.city.capitalize %>, <%= @pet.user.zipcode %></h4>
         <p>et je vais booster ton potentiel de séduction 💘</p>
         <br>
-        <p><strong>Qui-suis-je?</strong></p>
+        <p><strong>J'habite à </strong>:</p>
+        <p>🏠 <%= @pet.user.city.capitalize %>, <%= @pet.user.zipcode %></p>
+        <p>et je vais booster ton potentiel de séduction 💘 </p>
+        <p><strong>Qui-suis-je ?</strong></p>
         <p><%= @pet.description %></p>
+        <p><strong>J'appartiens à </strong>: <%= @pet.user.first_name %> 🫶</p>
       <% end %>
       <%= render "detailed_card" do %>
     <div class="">
