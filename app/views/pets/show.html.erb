@@ -22,9 +22,9 @@
           <%= simple_form_for [@pet, Booking.new] do |f| %>
             <%= f.input :start_date, label: 'Sélectionne tes dates !',
                 as: :string,
-                input_html: { data: { controller: "datepicker" } } %>
+                input_html: { data: { controller: "datepicker", action: "change->price#handleDateChange" } } %>
             <div class="form-actions">
-              <%= f.submit "Book !", class: "btn btn-primary"%>
+              <%= f.submit "Book !", class: "btn btn-primary disabled", data: { price_target: "btn" } %>
             </div>
           <% end %>
         </div>
