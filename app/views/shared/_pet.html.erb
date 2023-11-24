@@ -4,7 +4,7 @@
     <div class="row d-flex align-item-center">
       <h5 class="card-title d-flex justify-content-between">
         <Strong><%= pet.name %></Strong>
-        <span> 🍆 <%=pet.taux_de_succes.round(1)%>%</span>
+          <span> 🍆 <%= pet.taux_de_succes.round(1)%>%</span>
       </h5>
       <p><%= truncate(pet.description, length: 60, separator: ' ', omission: ' (...)') %>
     </div>
