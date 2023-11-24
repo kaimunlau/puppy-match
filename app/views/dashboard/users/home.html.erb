@@ -8,7 +8,7 @@
     <% end %>
   </div>
 <% else %>
-  <p>You have no bookings yet.</p>
+  <p>Tu n'as pas encore loué de chiot?</p>
 <% end %>
 
 <h2>Mes Chiots</h2>
@@ -40,21 +40,21 @@
         <% end %>
       </div>
     <% else %>
-      <p>You have no pets yet.</p>
+      <p>Tu n'as encore aucun chiot !</p>
     <% end %>
   </div>
 
   <div class="col-md-4">
     <% if current_user.pets.any? %>
       <% if @my_pet_bookings.any? %>
-        <h3>Gestion des résa.</h3>
+        <h3>Gestion des réservations</h3>
         <div class="d-flex flex-wrap gap-2 mb-3">
           <% @my_pet_bookings.each do |booking| %>
             <%= render partial: "booking", locals: { booking: booking } %>
           <% end %>
         </div>
       <% else %>
-        <p>No one has booked your pets yet.</p>
+        <p>Personne à loué ton chiot, il est pas assez mim's</p>
       <% end %>
     <% end %>
   </div>
