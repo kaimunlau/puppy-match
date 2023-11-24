@@ -1,8 +1,11 @@
 <div class="card border-0 mb-3 overflow-hidden shadow" style="max-width: 350px; min-height:410px;">
     <%= cl_image_tag pet.photo.key, height: 250, width: 350, crop: :fill %>
   <div class="card-body d-flex flex-column justify-content-between">
-    <div>
-      <h5 class="card-title"><Strong><%= pet.name %></Strong></h5>
+    <div class="row d-flex align-item-center">
+      <h5 class="card-title d-flex justify-content-between">
+        <Strong><%= pet.name %></Strong>
+        <span> 🍆 <%=pet.taux_de_succes.round(1)%>%</span>
+      </h5>
       <p><%= truncate(pet.description, length: 60, separator: ' ', omission: ' (...)') %>
     </div>
     <div class="d-flex justify-content-between">
