@@ -20,7 +20,7 @@
         <button class="btn btn-primary mb-3" data-action="click->new-pet#toggleForm">Ajouter un chiot</button>
           <div class="d-none" data-new-pet-target="form">
             <%= simple_form_for @pet do |f| %>
-              <div class="form-inputs"  >
+              <div class="form-inputs mb-3"  >
                 <%= f.input :name %>
                 <%= f.input :price %>
                 <%= f.input :species %>
