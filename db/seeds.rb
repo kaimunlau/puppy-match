@@ -100,9 +100,9 @@ owner10 = User.create!(
   password: "123456",
   first_name: "Monica",
   last_name: "Geller",
-  address: "11 Rue du Commandant Faurax",
-  zipcode: "69006",
-  city: "Lyon")
+  address: "17 allée de valombré",
+  zipcode: "69300",
+  city: "caluire et cuire")
 puts "User created, email is #{owner10.email}, pw is #{owner10.password}!"
 
 owner11 = User.create!(
@@ -110,8 +110,8 @@ owner11 = User.create!(
   password: "123456",
   first_name: "Rachel",
   last_name: "Green",
-  address: "11 rue tronchet",
-  zipcode: "69006",
+  address: "1 rue de nuits",
+  zipcode: "69004",
   city: "Lyon")
 puts "User created, email is #{owner11.email}, pw is #{owner11.password}!"
 
