@@ -1,7 +1,9 @@
 <div class="container mt-4">
     <!-- Pet Details -->
   <div class="d-flex gap-4 ">
-    <%= cl_image_tag @pet.photo.key, width: 700, crop: :fill, class: "rounded" %>
+    <div class="overflow-hidden rounded">
+    <%= cl_image_tag @pet.photo.key, height: 600, width: 900, crop: :fill %>
+    </div>
     <div class="d-flex flex-column justify-content-between gap-4">
       <%= render "detailed_card" do %>
         <h1>Hey coucou, I'm <strong><%= @pet.name %></strong></h1>
