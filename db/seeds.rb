@@ -132,10 +132,15 @@ puts "Creating pets..."
 img_urls = ["https://source.unsplash.com/random/?puppy/orientation=landscape"
 ]
 
+def get_random_name
+  possible_names = [Faker::Creature::Dog.unique.name, Faker::Creature::Cat.unique.name, Faker::Artist.unique.name, Faker::FunnyName.unique.name]
+  possible_names.sample
+end
+
 20.times do
   file = URI.open(img_urls.sample)
   pet = Pet.new(
-    name: Faker::Artist.unique.name,
+    name: get_random_name,
     species: "Dog",
     user_id: owners.sample.id,
     description: Faker::ChuckNorris.fact,
@@ -147,9 +152,10 @@ img_urls = ["https://source.unsplash.com/random/?puppy/orientation=landscape"
 end
 
 puts "Creating bookings..."
+lucky_owner = owners.select { |owner| owner.pets.count > 0 }.sample
 Booking.create!(
   user_id: client.id,
-  pet_id: owners.sample.pets.sample.id,
+  pet_id: lucky_owner.pets.sample.id,
   start_date: Date.today + 1,
   end_date: Date.today + 3,
   status: "pending")
