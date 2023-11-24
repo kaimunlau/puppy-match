@@ -14,9 +14,13 @@
           <p><%= @pet.description %></p>
         </div>
         <div class= "p-2 border-bottom">
-          <p><strong>Mon p'tit taux de succès 🍆 :</strong></p>
+          <% if @pet.taux_de_succes > 0.0 %>
+            <p><strong>Mon p'tit taux de succès 🍆 :</strong></p>
+          <% end %>
           <p>Je vais booster ton potentiel de séduction 💘</p>
-          <span>car grâce à moi <strong><%= @pet.taux_de_succes.round(1)%>%</strong> des pélo' ont pécho!</span>
+          <% if @pet.taux_de_succes > 0.0 %>
+            <span>car grâce à moi <strong><%= @pet.taux_de_succes.round(1)%>%</strong> des pélo' ont pécho!</span>
+          <% end %>
         </div>
         <div class= "p-2 d-flex justify-items-center">
           <div class="p-2 border-end" style="flex: 1;">
