@@ -7,4 +7,5 @@ class Pet < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true, comparison: { greater_than: 0 }
   validates :photo, presence: true
+  validates :description, presence: true
 end
