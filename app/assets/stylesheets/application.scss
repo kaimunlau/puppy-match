@@ -11,6 +11,10 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  background-color: $light-orange;
+}
+
 .glass {
   background: linear-gradient(283deg, rgba(246,189,96,1) 21%, rgba(242,132,130,1) 54%);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -21,6 +25,16 @@
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
+p {
+  margin: 0;
+  margin-bottom: .25rem;
+}
+
 a {
   text-decoration: none;
+  color: $gray;
+}
+
+.card-body {
+  background-color: $bg-beige;
 }
