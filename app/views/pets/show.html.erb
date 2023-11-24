@@ -24,7 +24,7 @@
                 as: :string,
                 input_html: { data: { controller: "datepicker", action: "change->price#handleDateChange" } } %>
             <div class="form-actions d-flex justify-content-between align-items-baseline">
-              <%= f.submit "Book !", class: "btn btn-primary disabled", data: { price_target: "btn" } %>
+              <%= f.submit "Book !", class: "btn btn-warning disabled", data: { price_target: "btn" } %>
               <h4 data-price-target="total" class="me-4"></h4>
             </div>
           <% end %>
