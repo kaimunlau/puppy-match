@@ -2,22 +2,9 @@
 
 <%= link_to "Add a new pet", new_pet_path, class: "btn btn-primary mb-3" %>
 
-<h2>My Pets</h2>
-<% if current_user.pets.any? %>
-  <div class="d-flex flex-wrap gap-4 m-3 mb-5">
-    <% current_user.pets.each do |pet| %>
-    <%= link_to render(
-          partial: "shared/pet", locals: { pet: pet }
-        ), pet %>
-    <% end %>
-  </div>
-<% else %>
-  <p>You have no pets yet.</p>
-<% end %>
-
-<h2>My Bookings</h2>
+<h2>J'ai loué ces chiots</h2>
 <% if current_user.bookings.any? %>
-  <div class="d-flex gap-2 mb-3">
+  <div class="d-flex gap-2 mb-5">
     <% @my_bookings.each do |booking| %>
       <%= render partial: "booking", locals: { booking: booking } %>
     <% end %>
@@ -26,15 +13,35 @@
   <p>You have no bookings yet.</p>
 <% end %>
 
-<% if current_user.pets.any? %>
-  <% if @my_pet_bookings.any? %>
-    <h2>My Pet Bookings</h2>
-    <div class="d-flex gap-2 mb-3">
-      <% @my_pet_bookings.each do |booking| %>
-        <%= render partial: "booking", locals: { booking: booking } %>
+<h2>Mes Chiots</h2>
+<div class="row">
+  <div class="col-8">
+    <h3>Tous mes chiots</h3>
+    <% if current_user.pets.any? %>
+      <div class="mb-5 d-flex flex-wrap gap-2">
+        <% current_user.pets.each do |pet| %>
+          <%= link_to render(
+            partial: "shared/pet", locals: { pet: pet }
+              ), pet %>
+        <% end %>
+      </div>
+    <% else %>
+      <p>You have no pets yet.</p>
+    <% end %>
+  </div>
+
+  <div class="col-4">
+    <% if current_user.pets.any? %>
+      <% if @my_pet_bookings.any? %>
+        <h3>Gestion des résa.</h3>
+        <div class="d-flex gap-2 mb-3">
+          <% @my_pet_bookings.each do |booking| %>
+            <%= render partial: "booking", locals: { booking: booking } %>
+          <% end %>
+        </div>
+      <% else %>
+        <p>No one has booked your pets yet.</p>
       <% end %>
-    </div>
-  <% else %>
-    <p>No one has booked your pets yet.</p>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+</div>

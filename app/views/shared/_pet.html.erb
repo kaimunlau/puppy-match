@@ -8,12 +8,14 @@
     <div class="d-flex justify-content-between">
       <p><Strong><%= pet.price %>€</Strong> par jour</p>
       <% unless current_page?(root_path) %>
-        <div class="ms-2 d-flex gap-2">
-          <%= link_to content_tag(:i, '', class: 'fas fa-edit link-primary'), edit_pet_path(pet) %>
-          <%= link_to content_tag(:i,'',class: 'fas fa-trash-can  link-primary'), pet_path(pet),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
-            %>
-        </div>
+        <% if pet.user == current_user %>
+          <div class="ms-2 d-flex gap-2">
+            <%= link_to content_tag(:i, '', class: 'fas fa-edit link-primary'), edit_pet_path(pet) %>
+            <%= link_to content_tag(:i,'',class: 'fas fa-trash-can  link-primary'), pet_path(pet),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+              %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
