@@ -2,7 +2,6 @@
 
 <div data-controller="new-pet">
   <button class="btn btn-primary mb-3" data-action="click->new-pet#toggleForm">Add a new pet</button>
-  <%# <%= btn "Add a new pet", new_pet_path, class: "btn btn-primary mb-3" %>
   <div class="d-none" data-new-pet-target="form">
   <%= simple_form_for @pet do |f| %>
     <div class="form-inputs"  >
