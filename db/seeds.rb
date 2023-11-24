@@ -149,7 +149,7 @@ end
 puts "Creating bookings..."
 Booking.create!(
   user_id: client.id,
-  pet_id: owner1.pets.sample.id,
+  pet_id: owners.sample.pets.sample.id,
   start_date: Date.today + 1,
   end_date: Date.today + 3,
   status: "pending")

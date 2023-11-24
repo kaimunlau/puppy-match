@@ -1,31 +1,8 @@
-<h1 class="mb-5">Welcome <%= current_user.first_name %></h1>
+<h1 class="my-5">Welcome <%= current_user.first_name %></h1>
 
-<%= link_to "Add a new pet", new_pet_path, class: "btn btn-primary mb-3" %>
-
-<h2>My Pets</h2>
-<% if current_user.pets.any? %>
-  <div class="d-flex flex-wrap gap-4 m-3 mb-5">
-    <% current_user.pets.each do |pet| %>
-    <div class="d-flex flex-column border rounded p-2 shadow">
-      <%= link_to render(
-            partial: "shared/pet", locals: { pet: pet }
-          ), pet %>
-      <div class="ms-2">
-        <%= link_to content_tag(:i, '', class: 'fas fa-edit'), edit_pet_path(pet) %>
-        <%= link_to content_tag(:i,'',class: 'fas fa-trash-can'), pet_path(pet),
-              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
-          %>
-      </div>
-    </div>
-    <% end %>
-  </div>
-<% else %>
-  <p>Vous n'avez pas de chiot</p>
-<% end %>
-
-<h2>My Bookings</h2>
+<h2>J'ai loué ces chiots</h2>
 <% if current_user.bookings.any? %>
-  <div class="d-flex gap-2 mb-3">
+  <div class="d-flex flex-wrap gap-2 mb-5">
     <% @my_bookings.each do |booking| %>
       <%= render partial: "booking", locals: { booking: booking } %>
     <% end %>
@@ -79,8 +56,12 @@
       <% else %>
         <p>No one has booked your pets yet.</p>
       <% end %>
-    </div>
-  <% else %>
-    <p>No one has booked your pets yet.</p>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
