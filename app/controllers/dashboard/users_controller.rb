@@ -7,6 +7,8 @@ module Dashboard
       @my_pet_bookings = make_my_pet_bookings(pets_with_bookings)
 
       @my_bookings = make_my_bookings(current_user.bookings)
+
+      @pet = Pet.new
     end
 
     private

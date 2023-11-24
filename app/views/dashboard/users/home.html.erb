@@ -1,6 +1,20 @@
 <h1 class="my-5">Welcome <%= current_user.first_name %></h1>
 
-<%= link_to "Add a new pet", new_pet_path, class: "btn btn-primary mb-3" %>
+<div data-controller="new-pet">
+  <button class="btn btn-primary mb-3" data-action="click->new-pet#toggleForm">Add a new pet</button>
+    <div class="d-none" data-new-pet-target="form">
+      <%= simple_form_for @pet do |f| %>
+        <div class="form-inputs"  >
+          <%= f.input :name %>
+          <%= f.input :price %>
+          <%= f.input :species %>
+          <%= f.input :description %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit "Youpi !", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+</div>
 
 <h2>J'ai loué ces chiots</h2>
 <% if current_user.bookings.any? %>
