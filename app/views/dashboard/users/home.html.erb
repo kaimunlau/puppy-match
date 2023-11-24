@@ -48,7 +48,7 @@
     <% if current_user.pets.any? %>
       <% if @my_pet_bookings.any? %>
         <h3>Gestion des réservations</h3>
-        <div class="d-flex gap-2 mb-3">
+        <div class="d-flex flex-wrap gap-2 mb-3">
           <% @my_pet_bookings.each do |booking| %>
             <%= render partial: "booking", locals: { booking: booking } %>
           <% end %>
