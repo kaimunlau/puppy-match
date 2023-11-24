@@ -132,10 +132,15 @@ puts "Creating pets..."
 img_urls = ["https://source.unsplash.com/random/?puppy/orientation=landscape"
 ]
 
+def get_random_name
+  possible_names = [Faker::Creature::Dog.unique.name, Faker::Creature::Cat.unique.name, Faker::Artist.unique.name, Faker::FunnyName.unique.name]
+  possible_names.sample
+end
+
 20.times do
   file = URI.open(img_urls.sample)
   pet = Pet.new(
-    name: Faker::Artist.unique.name,
+    name: get_random_name,
     species: "Dog",
     user_id: owners.sample.id,
     description: Faker::ChuckNorris.fact,
