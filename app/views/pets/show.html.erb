@@ -2,7 +2,7 @@
     <!-- Pet Details -->
   <div class="d-flex gap-4 ">
     <div class="overflow-hidden rounded">
-    <%= cl_image_tag @pet.photo.key, height: 600, width: 900, crop: :fill %>
+    <%= cl_image_tag @pet.photo.key, height: 800, width: 900, crop: :fill %>
     </div>
     <div class="d-flex flex-column justify-content-between gap-4">
       <%= render "detailed_card" do %>
