@@ -152,9 +152,10 @@ end
 end
 
 puts "Creating bookings..."
+lucky_owner = owners.select { |owner| owner.pets.count > 0 }.sample
 Booking.create!(
   user_id: client.id,
-  pet_id: owners.sample.pets.sample.id,
+  pet_id: lucky_owner.pets.sample.id,
   start_date: Date.today + 1,
   end_date: Date.today + 3,
   status: "pending")
