@@ -38,3 +38,16 @@ a {
 .card-body {
   background-color: $bg-beige;
 }
+
+.navbar {
+  background-color: $dark-pink;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+.navbar .navbar-brand {
+  font-family: $nav-font;
+  letter-spacing: .2rem;
+  text-shadow: 2px 2px #ffffff5c;
+}
