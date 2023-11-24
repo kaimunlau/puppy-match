@@ -32,8 +32,10 @@ class PetsController < ApplicationController
     @pet.user = current_user
     if @pet.save
       redirect_to pet_path(@pet)
+      flash.alert = "Chiot ajouté :)"
     else
-      render :new, status: :unprocessable_entity
+      redirect_to dashboard_path
+      flash.alert = "Information manquante, impossible d'ajouter un chiot :("
     end
   end
 
