@@ -63,6 +63,7 @@ img_urls = [
     species: "Dog",
     user_id: owners.sample.id,
     description: Faker::ChuckNorris.fact,
+    taux_de_succes: rand(50..125.9),
     price: rand(10..100))
   pet.photo.attach(io: file, filename: "puppy.jpg", content_type: "image/jpg")
   pet.save!
